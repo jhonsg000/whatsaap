@@ -29,36 +29,32 @@
       display: none; 
       margin-top: 20px;
     }
-    /* Imagen oculta al inicio */
+    /* Imagen oculta al inicio y mostrada debajo del botón */
     #imagen {
       display: none;
-      position: fixed;   /* fija la imagen en la pantalla */
-      top: 0;
-      left: 0;
-      width: 100%;       /* ocupa todo el ancho */
-      height: 100%;      /* ocupa todo el alto */
-      object-fit: cover; /* ajusta la imagen sin deformarla */
-      z-index: -1;       /* queda detrás del texto */
+      margin: 20px auto 0;
+      max-width: 90%;
+      max-height: 60vh;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
   </style>
 </head>
 <body>
   <h1>Haz clic en el botón</h1>
-  <button onclick="mostrarTodo()">Clic aquí</button>
-  
-  <!-- Imagen oculta -->
-  <img id="imagen" src="linda.png" alt="linda">
+  <button type="button" onclick="mostrarTodo()">Clic aquí</button>
   
   <!-- Mensaje oculto -->
   <div id="mensaje" class="alerta">
     <b>Así o tengo que decirlo de otra forma para que me creas.</b>
   </div>
 
+  <!-- Imagen oculta -->
+  <img id="imagen" src="linda.png" alt="linda">
+
   <script>
     function mostrarTodo() {
-      // Mostrar mensaje
       document.getElementById("mensaje").style.display = "block";
-      // Mostrar imagen en grande
       document.getElementById("imagen").style.display = "block";
     }
   </script>
