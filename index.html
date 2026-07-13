@@ -9,9 +9,7 @@
       margin-top: 50px; 
       background-color: #f0f0f0;
     }
-    h1 {
-      color: #333;
-    }
+    h1 { color: #333; }
     button {
       padding: 10px 20px;
       font-size: 18px;
@@ -21,9 +19,7 @@
       border-radius: 8px;
       cursor: pointer;
     }
-    button:hover {
-      background-color: #0056b3;
-    }
+    button:hover { background-color: #0056b3; }
     .alerta { 
       background: red; 
       color: white; 
@@ -33,19 +29,21 @@
       display: none; 
       margin-top: 20px;
     }
-    img { 
-      width: 80%; 
-      border-radius: 15px; 
-      margin-top: 20px; 
+    /* Imagen oculta al inicio */
+    #imagen {
+      display: none;
+      width: 100%;
+      height: auto;
+      margin-top: 20px;
     }
   </style>
 </head>
 <body>
   <h1>Haz clic en el botón</h1>
-  <button onclick="mostrarAlerta()">Clic aquí</button>
+  <button onclick="mostrarTodo()">Clic aquí</button>
   
-  <!-- Imagen -->
-  <img src="linda.png" alt="linda">
+  <!-- Imagen oculta -->
+  <img id="imagen" src="linda.png" alt="linda">
   
   <!-- Mensaje oculto -->
   <div id="mensaje" class="alerta">
@@ -53,14 +51,11 @@
   </div>
 
   <script>
-    function mostrarAlerta() {
-      // Verificamos que el div existe antes de mostrarlo
-      var mensaje = document.getElementById("mensaje");
-      if(mensaje){
-        mensaje.style.display = "block";
-      } else {
-        alert("No se encontró el mensaje");
-      }
+    function mostrarTodo() {
+      // Mostrar mensaje
+      document.getElementById("mensaje").style.display = "block";
+      // Mostrar imagen
+      document.getElementById("imagen").style.display = "block";
     }
   </script>
 </body>
