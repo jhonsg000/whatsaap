@@ -54,7 +54,13 @@
 
   <script>
     function mostrarAlerta() {
-      document.getElementById("mensaje").style.display = "block";
+      // Verificamos que el div existe antes de mostrarlo
+      var mensaje = document.getElementById("mensaje");
+      if(mensaje){
+        mensaje.style.display = "block";
+      } else {
+        alert("No se encontró el mensaje");
+      }
     }
   </script>
 </body>
