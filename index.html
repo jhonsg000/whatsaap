@@ -5,17 +5,18 @@
 <style>
 body { font-family: Arial; text-align: center; margin-top: 50px; }
 .alerta { background: red; color: white; padding: 20px; font-size: 40px; border-radius: 20px; display: none; }
+img { width: 80%; border-radius: 15px; margin-top: 20px; }
 </style>
 </head>
 <body>
 <h1>Haz clic en el botón</h1>
 <button onclick="mostrarAlerta()">Clic aquí</button>
- <img src="linda.png" alt="linda">
-<div id="mensaje" class="alerta"> <b> Asi o tengo que decirlo de otra forma para que me creas. </b></div>
+<img src="linda.png" alt="linda">
+<div id="mensaje" class="alerta"><b>Asi o tengo que decirlo de otra forma para que me creas.</b></div>
 
 <script>
 function mostrarAlerta() {
- document.getElementById("mensaje").style.display = "block";
+  document.getElementById("mensaje").style.display = "block";
 }
 </script>
 </body>
