@@ -32,9 +32,13 @@
     /* Imagen oculta al inicio */
     #imagen {
       display: none;
-      width: 100%;
-      height: auto;
-      margin-top: 20px;
+      position: fixed;   /* fija la imagen en la pantalla */
+      top: 0;
+      left: 0;
+      width: 100%;       /* ocupa todo el ancho */
+      height: 100%;      /* ocupa todo el alto */
+      object-fit: cover; /* ajusta la imagen sin deformarla */
+      z-index: -1;       /* queda detrás del texto */
     }
   </style>
 </head>
@@ -54,7 +58,7 @@
     function mostrarTodo() {
       // Mostrar mensaje
       document.getElementById("mensaje").style.display = "block";
-      // Mostrar imagen
+      // Mostrar imagen en grande
       document.getElementById("imagen").style.display = "block";
     }
   </script>
