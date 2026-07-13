@@ -6,10 +6,16 @@
     body { 
       font-family: Arial; 
       text-align: center; 
-      margin-top: 50px; 
+      margin: 40px 0 0; 
       background-color: #f0f0f0;
     }
     h1 { color: #333; }
+    .contenedor {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
     button {
       padding: 10px 20px;
       font-size: 18px;
@@ -18,39 +24,42 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
+      display: inline-block;
+      position: relative;
+      z-index: 2;
     }
     button:hover { background-color: #0056b3; }
     .alerta { 
       background: red; 
       color: white; 
-      padding: 20px; 
-      font-size: 40px; 
-      border-radius: 20px; 
-      display: none; 
-      margin-top: 20px;
+      padding: 20px;
+      font-size: 24px;
+      border-radius: 20px;
+      display: none;
+      max-width: 90%;
     }
-    /* Imagen oculta al inicio y mostrada debajo del botón */
     #imagen {
       display: none;
-      margin: 20px auto 0;
-      max-width: 90%;
+      width: auto;
+      max-width: 320px;
       max-height: 60vh;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      object-fit: contain;
     }
   </style>
 </head>
 <body>
-  <h1>Haz clic en el botón</h1>
-  <button type="button" onclick="mostrarTodo()">Clic aquí</button>
-  
-  <!-- Mensaje oculto -->
-  <div id="mensaje" class="alerta">
-    <b>Así o tengo que decirlo de otra forma para que me creas.</b>
-  </div>
+  <div class="contenedor">
+    <h1>Haz clic en el botón</h1>
+    <button type="button" onclick="mostrarTodo()">Clic aquí</button>
 
-  <!-- Imagen oculta -->
-  <img id="imagen" src="linda.png" alt="linda">
+    <div id="mensaje" class="alerta">
+      <b>Así o tengo que decirlo de otra forma para que me creas.</b>
+    </div>
+
+    <img id="imagen" src="linda.png" alt="linda">
+  </div>
 
   <script>
     function mostrarTodo() {
